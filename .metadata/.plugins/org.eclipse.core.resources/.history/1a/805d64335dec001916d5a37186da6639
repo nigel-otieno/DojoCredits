@@ -1,0 +1,5 @@
+package com.codingdojo.relationships.repository;
+
+public interface RelationshipRepository {
+
+}

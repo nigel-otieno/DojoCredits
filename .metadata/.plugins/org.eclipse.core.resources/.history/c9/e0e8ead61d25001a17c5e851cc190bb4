@@ -1,0 +1,8 @@
+.searchbar{
+	padding-top: 2%;
+border-style: none;
+}
+button{
+	border-style: none;
+	
+}

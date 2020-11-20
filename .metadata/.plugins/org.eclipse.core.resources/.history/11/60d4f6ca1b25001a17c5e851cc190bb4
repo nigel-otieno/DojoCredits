@@ -1,0 +1,6 @@
+.searchbar{
+	padding-top: 2%;
+	border-style: outset;
+	height: 5%;
+	width: 10%;
+}

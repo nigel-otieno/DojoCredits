@@ -1,0 +1,15 @@
+ CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.profile-header {
+    transform: translateY(5rem);
+    padding-top:50px;
+}
+
+body {
+    background: #654ea3;
+    background: -webkit-linear-gradient(to right, white, #33AEFF);
+    background: linear-gradient(to right, white, #33AEFF);
+    min-height: 100vh;
+}

@@ -1,0 +1,11 @@
+package com.codingdojo.relationships.repository;
+
+import java.util.List;
+
+import com.codingdojo.MVC.models.Book;
+
+public interface RelationshipRepository extends CrudRepository() {
+	List<Relationship> findAll();
+	Long deleteByTitleStartingWith(String search);
+}
+

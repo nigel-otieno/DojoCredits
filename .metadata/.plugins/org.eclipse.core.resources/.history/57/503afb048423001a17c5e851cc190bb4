@@ -1,0 +1,6 @@
+.backgroundbody{
+	background-color: #0e0e0e;
+}
+.searchbar{
+	float: right;'
+}

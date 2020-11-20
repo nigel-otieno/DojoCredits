@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/nigel/Desktop/SpringPlatform/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1916320662.index
+1257513472.index
+2510782216.index
+3462657006.index
+3304840797.index
+179177048.index

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="antlr.debug.Event"/>
+    <fullyQualifiedTypeName name="java.awt.Event"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltReview.repository.EventRepository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltReview.controller.Users"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltReview.models.User"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltReview.models.Event"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.User"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.security.SecurityProperties.User"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltExam.models.User"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltExam.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.BeltExam.services.UserService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.models.UserCourse"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.repository.UserCourseRepository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.repository.CourseRepository"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.models.User"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.services.UserService"/>
+    <fullyQualifiedTypeName name="com.codingdojo.JavaTest.models.Course"/>
+    <fullyQualifiedTypeName name="com.codingdojo.commUnity.models.User"/>
+    <fullyQualifiedTypeName name="com.codingdojo.commUnity.repository.commUnityRepository"/>
+</qualifiedTypeNameHistroy>

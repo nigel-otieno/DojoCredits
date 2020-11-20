@@ -1,0 +1,13 @@
+body {
+  margin-top: 200px;
+  background: #007bff;
+  background: linear-gradient(to right, white, #33AEFF);
+}
+
+.privacy{
+	background-color:#eaeaea;
+	
+}
+.card-body white-text rgba-black-light text-center{
+	height:100px;
+}

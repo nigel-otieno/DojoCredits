@@ -1,0 +1,251 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/css/timeline.css">
+<script type="text/javascript" src="js/timeline.js"></script>
+
+<title>Timeline</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/timeline">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/profile/${user_id}" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+            <div class="dropdown-menu" style="float: right" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="/messages">Messages</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/create">Create Event</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+            <div class="dropdown-menu" style="float: right" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="">Contact Us</a>
+              <a class="dropdown-item" href="/terms_conditions">Term & Conditions</a>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="searchbar">
+			<form class="form-inline my-2 my-lg-0" method="Get"
+				action="/search">
+				<input class="form-control mr-sm-2" placeholder="Search Events"
+					name="event" type="text" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0 btn-info"
+					type="submit">Search</button>
+			</form>
+	</div>
+	<%-- <div class="wrapper">
+		<!-- Sidebar  -->
+		<nav id="sidebar" style="background-color: #4f4f4f;">
+			<div class="sidebar-header">
+				<h3>commUnity</h3>
+			</div>
+
+			<ul class="list-unstyled components">
+			<li><a href="/timeline">Home</a></li>
+				<li class="active"><a href="#homeSubmenu"
+					data-toggle="collapse" aria-expanded="false"
+					class="dropdown-toggle">Profile</a>
+					<ul class="collapse list-unstyled" id="homeSubmenu">
+						<li><a href="/profile/${user_id}">View Profile</a></li>
+						<li><a href="/user/${user_id}/edit">Edit Profile</a></li>
+					</ul></li>
+				<li><a href="/create">Create Event</a></li>
+				<li><a href="/messages">Messages</a></li>
+				<li><a href="">Contact Us</a></li>
+				<li><a href="/terms_conditions">Term & Conditions</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</nav>
+		<!-- Page Content  -->
+		<div id="content">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<i class="fas fa-align-left"></i> <span>Menu</span>
+					</button>
+					<div class="searchbar">
+						<form class="form-inline my-2 my-lg-0" method="Get"
+							action="/search">
+							<input class="form-control mr-sm-2" placeholder="Search Events"
+								name="event" type="text" aria-label="Search">
+							<button class="btn btn-outline-success my-2 my-sm-0 btn-info"
+								type="submit">Search</button>
+						</form>
+					</div>
+
+				</div>
+			</nav>
+
+			<c:forEach items="${events}" var="event">
+				<div class="contentmanger " style="padding: 10px;">
+					<p class="card-text">
+						<small class="text">Posted: ${event.createdAt}</small>
+					</p>
+					<div class="row featurette border-dark">
+						<div class="col-md-7 order-md-2 ">
+							<h2 class="featurette-heading">
+								<a style="color: white" href="/events/${event.id}">${event.name}</a>
+							</h2>
+							<div class="card-body">
+								<h5 class="card-title">
+									<c:choose>
+										<c:when test="${event.user.id == user_logged.id}">
+											<a style="color: orange" href="/events/${event.id}/edit">Edit</a>
+											<br>
+											<a style="color: red" href="/events/${event.id}/delete">Delete</a>
+										</c:when>
+
+										<c:otherwise>
+
+											<c:choose>
+												<c:when test="${event.attendees.contains(user_logged)}">
+													<span><a style="color: red"
+														href="/events/${event.id}/cancel">Cancel </a></span>
+												</c:when>
+
+												<c:otherwise>
+													<h2><a style="color: green" href="/events/${event.id}/join">Join
+														Event</a></h2>
+												</c:otherwise>
+											</c:choose>
+										</c:otherwise>
+									</c:choose>
+								</h5>
+							</div>
+							<p style="color: black" class="lead">${event.date}</p>
+							<p style="color: black" class="lead">${event.description}</p>
+						</div>
+						<div class="col-md-5 order-md-1">
+							<img src="/img/Event/${event.fileName}" height="400px"
+								width="650px">
+						</div>
+					</div>
+					<div class="line"></div>
+				</div>
+			</c:forEach>
+			
+		</div>
+	</div>  --%>
+
+
+	<%-- 
+
+		<!-- Page Content Holder -->
+		<div id="content">
+
+			<nav class="navbar navbar-default bg-light">
+				<div class="container-fluid">
+
+					<div class="navbar-header">
+
+						<button type="button" id="sidebarCollapse"
+							class="btn btn-info navbar-btn">
+							<i class="glyphicon glyphicon-align-left"></i> <span>Menu</span>
+						</button>
+						<div class="searchbar">
+							<form class="form-inline my-2 my-lg-0" method="Get" action="/search">
+								<input class="form-control mr-sm-2" placeholder="Search Events" name="event" type="text" aria-label="Search">
+								<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<c:forEach items="${events}" var="event">
+			<div class="contentmanger bg-light" style="padding:10px;">
+			<p class="card-text">
+								<small class="text-muted">Posted: ${event.createdAt}</small>
+						</p>
+				<div class="row featurette border-dark">
+					<div class="col-md-7 order-md-2 ">
+						<h2 class="featurette-heading">
+							<a style="color: black" href="/events/${event.id}">${event.name}</a>
+						</h2>
+						<div class="card-body">
+							<h5 class="card-title">
+								<c:choose>
+									<c:when test="${event.user.id == user_logged.id}">
+										<a style="color: orange" href="/events/${event.id}/edit">Edit</a><br>
+										<a style="color: red" href="/events/${event.id}/delete">Delete</a>
+									</c:when>
+
+									<c:otherwise>
+
+										<c:choose>
+											<c:when test="${event.attendees.contains(user_logged)}">
+												<span><a style="color: red" href="/events/${event.id}/cancel">Cancel
+												</a></span>
+											</c:when>
+
+											<c:otherwise>
+												<a style="color: green" href="/events/${event.id}/join">Join Event</a>
+											</c:otherwise>
+										</c:choose>
+									</c:otherwise>
+								</c:choose>
+							</h5>
+						</div>
+						<p style="color: black" class="lead">${event.date}</p>
+						<p style="color: black" class="lead">${event.description}</p>
+					</div>
+					<div class="col-md-5 order-md-1">
+						<img src="/img/Event/${event.fileName}" height="400px"
+							width="650px">
+					</div>
+				</div>
+				<div class="line"></div>
+				</div>
+			</c:forEach>
+		</div>
+	</div> --%>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.navabr{
+	word-spacing: 10px;
+	text-align: center;
+}
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

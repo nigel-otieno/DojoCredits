@@ -1,0 +1,13 @@
+package com.codingdojo.relationships.controllers;
+
+import com.codingdojo.MVC.services.BookService;
+
+@Controller
+public class RelationshipController {
+	
+	private final RelationshipService relationshipService;
+
+    public RelationshipController (RelationshipService relationshipService) {
+        this.relationshipService = relationshipService;
+    }
+}

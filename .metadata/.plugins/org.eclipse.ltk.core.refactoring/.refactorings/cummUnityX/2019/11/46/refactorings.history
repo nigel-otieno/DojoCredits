@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.codingdojo.cummUnityX.controllers.Users&apos; to &apos;UsersController&apos;&#x0A;- Original project: &apos;cummUnityX&apos;&#x0A;- Original element: &apos;com.codingdojo.cummUnityX.controllers.Users&apos;&#x0A;- Renamed element: &apos;com.codingdojo.cummUnityX.controllers.UsersController&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Users&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.codingdojo.cummUnityX.controllers{Users.java[Users" matchStrategy="1" name="UsersController" qualified="false" references="true" similarDeclarations="false" stamp="1573588417952" textual="false" version="1.0"/>
+</session>

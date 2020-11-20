@@ -1,0 +1,39 @@
+package com.codingdojo.relationships.services;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class RelationshipService {
+private final LookRepository lookRepository;
+	
+	public LookService(LookRepository lookRepository) {
+		this.lookRepository = lookRepository;
+	}
+	
+	public java.util.List<Look> allLooks() {
+        return lookRepository.findAll();
+    }
+    // creates a book
+    public Look createLook(Look look) {
+        return lookRepository.save(look);
+    }
+    // retrieves a book
+    public Look findLook(Long id) {
+        Optional<Look> optionalLook = lookRepository.findById(id);
+        if(optionalLook.isPresent()) {
+            return optionalLook.get();
+        } else {
+            return null;
+        }
+    }
+    public List<Look> findByArtist(String search){
+    	return lookRepository.findByArtistContaining(search);
+    }
+    public void deleteLook(Long id) {
+		Optional<Look> optionalLook = lookRepository.findById(id);
+		if(optionalLook.isPresent()) {
+		lookRepository.deleteById(id);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.navbar-nav{
+	margin-left: 1000px;
+
+}
+.logo{
+	height:100px;
+	width:100px;
+	margin-left: 20px;
+	border-width: 20px;
+}
+.seperator{
+	background-color: #5e5e5e;
+	height: 2.5px;
+	width: 1500px;
+ 	margin-left: 200px;
+}
+.posts{
+	margin-left: 700px;
+}

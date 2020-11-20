@@ -1,0 +1,5 @@
+package com.codingdojo.LogReg.repository;
+
+public class UserRepository {
+
+}

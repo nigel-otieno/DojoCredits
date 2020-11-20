@@ -1,0 +1,24 @@
+package com.codingdojo.relationships.models;
+
+@Entity
+@Table(name="Students")
+public class Students {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    @Column(updatable=false)
+    private Date createdAt;
+    private Date updatedAt;
+    @OneToOne(mappedBy="person", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private ContactInfo license;
+    
+    public Students() {
+        
+    }
+    // ...
+    // getters and setters removed for brevity
+    // ...
+}
